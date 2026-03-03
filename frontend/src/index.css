@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f8fafc;
+  --bg-2: #eef2ff;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --brand-500: #6366f1;
+  --brand-600: #4f46e5;
+}
+
+html.dark {
+  --bg: #0b1220;
+  --bg-2: #1d2840;
+  --card-bg: #0f172a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+}
+
+html[data-accent="indigo"] {
+  --brand-500: #6366f1;
+  --brand-600: #4f46e5;
+}
+
+html[data-accent="emerald"] {
+  --brand-500: #10b981;
+  --brand-600: #059669;
+}
+
+html[data-accent="rose"] {
+  --brand-500: #f43f5e;
+  --brand-600: #e11d48;
+}
+
+html[data-accent="sky"] {
+  --brand-500: #0ea5e9;
+  --brand-600: #0284c7;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top right, var(--bg-2) 0%, var(--bg) 35%, var(--bg) 100%);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold;
+}
+
+.bg-brand-500 {
+  background-color: var(--brand-500) !important;
+}
+
+.text-brand-600 {
+  color: var(--brand-500) !important;
+}
+
+.hover\:bg-brand-600:hover {
+  background-color: var(--brand-600) !important;
+}
+
+.focus\:border-brand-500:focus {
+  border-color: var(--brand-500) !important;
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/95,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+  background-color: var(--card-bg) !important;
+}
+
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+  border-color: var(--border) !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-600,
+html.dark .text-slate-700 {
+  color: var(--text-secondary) !important;
+}
+
+html.dark .text-slate-800 {
+  color: var(--text-primary) !important;
+}
